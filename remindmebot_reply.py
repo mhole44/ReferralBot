@@ -145,7 +145,7 @@ class Reply(object):
         origin_date_text = ""
         # Before feature was implemented, there are no origin dates stored
         if origin_date is not None:
-            origin_date_text =  ("\n\nYou requested this reminder on: " 
+            origin_date_text = ("\n\nYou requested this reminder on: " 
                                 "[**" + _force_utf8(origin_date) + " UTC**](http://www.wolframalpha.com/input/?i="
                                 + _force_utf8(origin_date) + " UTC To Local Time)")
 
@@ -156,8 +156,8 @@ class Reply(object):
                 message=self._replyMessage.format(
                     message=_force_utf8(message),
                     original=_force_utf8(permalink),
-                    parent= self.parent_comment(permalink),
-                    origin_date_text = origin_date_text
+                    parent=self.parent_comment(permalink),
+                    origin_date_text=origin_date_text
                 ))
             print "Did It"
             return True    
