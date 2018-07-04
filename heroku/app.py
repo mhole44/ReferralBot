@@ -74,14 +74,7 @@ def handle():
                 pm.run()
                 item.mark_read()
 
-import inspect
 
 if __name__ == "__main__":
-    user = reddit.redditor('IEpicDestroyer')
-    for i in inspect.getmembers(user):
-        print(i)
-    print(dir(Redditor))
-    print(user.link_karma)
-    #pprint.pprint(vars(user))
     while True:
         handle()
