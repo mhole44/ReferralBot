@@ -9,12 +9,15 @@ import re
 import time
 import traceback
 
+# check if environment variables are set up
 try:
     reddit = praw.Reddit(client_id=os.environ["CLIENT_ID"],
                          client_secret=os.environ["CLIENT_SECRET"],
                          password=os.environ["REDDIT_PASSWORD"],
                          user_agent='PM Bot',
                          username=os.environ["REDDIT_USERNAME"])
+
+# if not, check for a praw.ini file with [bot1] section
 except KeyError:
     reddit = praw.Reddit('bot1')
 
