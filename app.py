@@ -90,28 +90,28 @@ class Responder(object):
     def _build_message(self):
         """Build the response to the user."""
 
-            if self._message.subject in ["PM Referral"]:
-                # Give them a referral
-                message_referer_link = USER_MESSAGE_LINK.format(username=self._referer)
-                self._replyMessage += \
-                    " Thanks for showing interest in Public Mobile. When signing up," \
-                    " you can get a referral number from {referer}. Click [here]({message_referer_link}) to " \
-                    "message {referer}. \n\n Alternatively, click [here]({pm_referrals_link}) to get more information " \
-                    "on how referrals work.".format(
-                        referer=self._referer,
-                        message_referer_link=message_referer_link,
-                        pm_referrals_link=PM_MOBILE_LINK)
-            elif "re:" in self._message.subject:
-                # They are responding to our _message. What to do?
-                print("User {} replied to our _message. This is the _message: \n"
-                      "Subject: {} \n Message Body: {}".format(self._user, self._message.subject, self._message.body))
-            else:
-                # Tell them more about PM Mobile
-                self._replyMessage += \
-                    " I am a bot that can help you get a referral number for Public Mobile." \
-                    " We have a list of Public Mobile users who are happy to have their number used" \
-                    " for referrals. If you want to get a referral number, send me a message with \"PM Referral\"" \
-                    " as the subject or alternatively click [here]({bot_link}).".format(bot_link=BOT_MESSAGE_LINK)
+        if self._message.subject in ["PM Referral"]:
+            # Give them a referral
+            message_referer_link = USER_MESSAGE_LINK.format(username=self._referer)
+            self._replyMessage += \
+                " Thanks for showing interest in Public Mobile. When signing up," \
+                " you can get a referral number from {referer}. Click [here]({message_referer_link}) to " \
+                "message {referer}. \n\n Alternatively, click [here]({pm_referrals_link}) to get more information " \
+                "on how referrals work.".format(
+                    referer=self._referer,
+                    message_referer_link=message_referer_link,
+                    pm_referrals_link=PM_MOBILE_LINK)
+        elif "re:" in self._message.subject:
+            # They are responding to our _message. What to do?
+            print("User {} replied to our _message. This is the _message: \n"
+                  "Subject: {} \n Message Body: {}".format(self._user, self._message.subject, self._message.body))
+        else:
+            # Tell them more about PM Mobile
+            self._replyMessage += \
+                " I am a bot that can help you get a referral number for Public Mobile." \
+                " We have a list of Public Mobile users who are happy to have their number used" \
+                " for referrals. If you want to get a referral number, send me a message with \"PM Referral\"" \
+                " as the subject or alternatively click [here]({bot_link}).".format(bot_link=BOT_MESSAGE_LINK)
 
     def _reply(self):
         """Send a reply to the user"""
@@ -144,7 +144,7 @@ def handle():
                     pm.run()
                     item.mark_read()
             time.sleep(30)
-
+            print("Sleeping...")
         except Exception:
             print("Error occurred. Here's the traceback: \n {} \n\n Sleeping for 30 seconds then "
                   "continuing on...".format(traceback.format_exc()))
