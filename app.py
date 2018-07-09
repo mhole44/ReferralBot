@@ -146,11 +146,10 @@ def handle():
                     pm = Responder(item)
                     pm.run()
                     item.mark_read()
-            time.sleep(30)
             print("Sleeping...")
+            time.sleep(30)
         except Exception:
-            print("Error occurred. Here's the traceback: \n {} \n\n Sleeping for 30 seconds then "
-                  "continuing on...".format(traceback.format_exc()))
+            print("Error occurred. Here's the traceback: \n {} \n\n Sleeping...".format(traceback.format_exc()))
             time.sleep(30)
 
 
