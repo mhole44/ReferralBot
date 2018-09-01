@@ -1,6 +1,6 @@
 # Referral Bot
 
-Fork of [RemindmeBot](https://github.com/SIlver--/remindmebot-reddit)
+Indirect Fork of [RemindmeBot](https://github.com/SIlver--/remindmebot-reddit)
 
 Responds to inbox messages of people looking for Referral numbers for Public Mobile. 
 There are two types of messages handled:
